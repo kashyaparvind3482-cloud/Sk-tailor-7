@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SK TAILOR 07 | Luxury Menswear</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --silver: #dce5f0;
+  --blue: #07182e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #050d19;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* HEADER */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ffffff25;
+}
+
+.logo {
+  font-family: 'Cinzel', serif;
+  color: var(--silver);
+  text-align: center;
+}
+
+.brand-name {
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  white-space: nowrap;
+}
+
+.brand-tagline {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  letter-spacing: 5px;
+  margin-top: 5px;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+nav a {
+  transition: .3s;
+}
+
+nav a:hover {
+  color: #a9c9ed;
+}
+
+/* HERO BACKGROUND ANIMATION */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 150px 9% 80px;
+
+  background:
+    linear-gradient(90deg, #030b17 5%, #07182eaa 55%, #07182e55),
+    url('images/IMG_20261106_143516_122.jpg') center center / 100% 100% no-repeat;
+
+  animation: backgroundZoom 20s ease-in-out infinite;
+}
+
+@keyframes backgroundZoom {
+  0%, 100% {
+    background-size: 100% 100%, 100% 100%;
+  }
+
+  50% {
+    background-size: 100% 100%, 115% 115%;
+  }
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.tag {
+  color: #c5d8ed;
+  letter-spacing: 5px;
+  font-size: 11px;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(42px, 7vw, 82px);
+  line-height: 1.15;
+  font-weight: 500;
+  color: #f0f5fb;
+}
+
+.hero h1 span {
+  color: #a9c7e8;
+}
+
+.hero p {
+  color: #c4cfdd;
+  line-height: 1.9;
+  font-size: 13px;
+  margin: 25px 0 35px;
+  max-width: 450px;
+}
+
+/* BUTTONS */
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  background: linear-gradient(135deg, #e7edf5, #8ea9c8);
+  color: #07182e;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 5px 8px 5px 0;
+  transition: .3s;
+}
+
+.button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px #9bbce555;
+}
+
+.button.outline {
+  background: transparent;
+  border: 1px solid #cbd9e9;
+  color: white;
+}
+
+/* COMMON SECTIONS */
+section {
+  padding: 100px 8%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.section-title small {
+  color: #9db9d8;
+  letter-spacing: 5px;
+  font-size: 10px;
+}
+
+.section-title h2 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(30px, 5vw, 48px);
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.section-title p {
+  color: #aab7c7;
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 15px;
+}
+
+/* COLLECTION */
+.collection {
+  background: #08172a;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.card {
+  position: relative;
+  height: 430px;
+  overflow: hidden;
+  background: #10233b;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .7s;
+}
+
+.card:hover img {
+  transform: scale(1.08);
+}
+
+.card-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 30px 20px;
+  background: linear-gradient(transparent, #020914ee);
+}
+
+.card-info h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.card-info p {
+  font-size: 10px;
+  color: #c6d6e8;
+  letter-spacing: 2px;
+  margin-top: 8px;
+}
+
+/* FEATURED */
+.featured {
+  min-height: 570px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, #030b17ee, #07182e66),
+    url('images/IMG_20261106_143516_410_5.jpg') center/cover;
+}
+
+.featured-content {
+  max-width: 570px;
+}
+
+.featured h2 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(35px, 6vw, 60px);
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 20px 0;
+}
+
+.featured p {
+  color: #d0d9e5;
+  font-size: 13px;
+  line-height: 2;
+  margin-bottom: 25px;
+}
+
+/* ABOUT */
+.about {
+  background: #071426;
+  text-align: center;
+}
+
+.about-box {
+  max-width: 750px;
+  margin: auto;
+}
+
+.about-box p {
+  color: #b7c4d3;
+  line-height: 2.1;
+  font-size: 13px;
+  margin-top: 25px;
+}
+
+/* GALLERY */
+.gallery {
+  background: #09182b;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: .4s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* PREMIUM CONTACT */
+.contact {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, #061329f5, #0b2342ed, #030b18f5),
+    url('images/IMG_20261106_143516_410_5.jpg') center/cover;
+}
+
+.contact::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid #c6d8ed35;
+  pointer-events: none;
+}
+
+.contact .section-title {
+  position: relative;
+  z-index: 1;
+  max-width: 750px;
+  margin: auto;
+  padding: 45px 15px;
+}
+
+.contact .section-title small {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #b7cbe455;
+  color: #c5d8ed;
+  letter-spacing: 4px;
+}
+
+.contact .section-title h2 {
+  font-size: clamp(34px, 6vw, 58px);
+  line-height: 1.35;
+  margin-top: 25px;
+}
+
+.contact p {
+  color: #c3d0df;
+  font-size: 13px;
+  line-height: 2;
+  margin: 20px auto 35px;
+  max-width: 500px;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 35px;
+}
+
+.contact-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: 235px;
+  padding: 19px 25px;
+  border: 1px solid #b9cce2;
+  background: linear-gradient(135deg, #eaf0f8, #a9bfd9);
+  color: #07182e;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition: .4s ease;
+  overflow: hidden;
+}
+
+.contact-btn span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.contact-btn:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px #9bbce555;
+  background: #ffffff;
+}
+
+.contact-btn.whatsapp {
+  background: transparent;
+  color: #e6f0fc;
+  border: 1px solid #b9cce2;
+}
+
+.contact-btn.whatsapp:hover {
+  background: #dce5f0;
+  color: #07182e;
+  box-shadow: 0 12px 35px #9bbce555;
+}
+
+.contact-note {
+  margin-top: 35px;
+  color: #829bb8;
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+/* PREMIUM FOOTER */
+footer {
+  position: relative;
+  background:
+    radial-gradient(ellipse at top, #102b4b 0%, #061326 45%, #020711 100%);
+  padding: 65px 8% 25px;
+  border-top: 1px solid #b8cce233;
+  text-align: center;
+}
+
+.footer-main {
+  max-width: 1050px;
+  margin: auto;
+}
+
+.footer-brand {
+  font-family: 'Cinzel', serif;
+  color: #e0eaf6;
+  font-size: clamp(27px, 5vw, 42px);
+  font-weight: 600;
+  letter-spacing: 5px;
+}
+
+.footer-tagline {
+  color: #9fb6d1;
+  font-size: 9px;
+  letter-spacing: 6px;
+  margin-top: 12px;
+}
+
+.footer-description {
+  max-width: 480px;
+  margin: 25px auto;
+  color: #aab9cc;
+  font-size: 11px;
+  line-height: 2;
+}
+
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #a9c3e477, transparent);
+  margin: 35px 0;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-links a {
+  min-width: 145px;
+  padding: 13px 20px;
+  border: 1px solid #9db9d844;
+  color: #d4e2f2;
+  font-size: 10px;
+  letter-spacing: 2px;
+  transition: .3s;
+}
+
+.footer-links a:hover {
+  color: #07182e;
+  background: #dce5f0;
+  border-color: #dce5f0;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  color: #8192a8;
+  font-size: 9px;
+  letter-spacing: 1px;
+  line-height: 1.8;
+}
+
+.footer-bottom a {
+  color: #b9cce2;
+  transition: .3s;
+}
+
+.footer-bottom a:hover {
+  color: white;
+}
+
+/* MOBILE */
+@media(max-width: 750px) {
+  header {
+    padding: 18px 5%;
+    gap: 10px;
+  }
+
+  .brand-name {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+
+  .brand-tagline {
+    font-size: 7px;
+    letter-spacing: 3px;
+  }
+
+  nav {
+    gap: 10px;
+    font-size: 9px;
+  }
+
+  .hero {
+    min-height: 90vh;
+    padding: 130px 7% 70px;
+    background-position: 58% center;
+  }
+
+  section {
+    padding: 75px 6%;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    height: 450px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid img {
+    height: 210px;
+  }
+
+  .contact::before {
+    inset: 10px;
+  }
+
+  .contact .section-title {
+    padding: 35px 10px;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .contact-btn {
+    width: 100%;
+    max-width: 290px;
+  }
+
+  footer {
+    padding: 50px 6% 22px;
+  }
+
+  .footer-bottom {
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media(max-width: 380px) {
+  .brand-name {
+    font-size: 19px;
+  }
+
+  nav {
+    gap: 7px;
+    font-size: 8px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <span class="brand-name">SK TAILOR 07</span>
+    <span class="brand-tagline">THE ART OF STYLE</span>
+  </div>
+
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#collection">COLLECTION</a>
+    <a href="#about">ABOUT</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="tag">LUXURY MENSWEAR • HYDERABAD</div>
+
+    <h1>
+      Style That<br>
+      Defines <span>You.</span>
+    </h1>
+
+    <p>
+      Discover the art of premium tailoring.
+      Designed for weddings, celebrations and
+      every moment that deserves a royal look.
+    </p>
+
+    <a href="#collection" class="button">
+      EXPLORE COLLECTION
+    </a>
+
+    <a href="#contact" class="button outline">
+      CONTACT US
+    </a>
+  </div>
+</section>
+
+<!-- COLLECTION -->
+<section class="collection" id="collection">
+  <div class="section-title">
+    <small>CRAFTED FOR DISTINCTION</small>
+    <h2>Our Collection</h2>
+    <p>Elegance in every detail. Confidence in every fit.</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <img src="images/IMG_20261106_143516_122_1.jpg" alt="Sherwani Collection">
+      <div class="card-info">
+        <h3>Royal Sherwani</h3>
+        <p>WEDDING • TRADITION • ELEGANCE</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/IMG_20261106_143516_392_4.jpg" alt="Bandhgala Collection">
+      <div class="card-info">
+        <h3>Bandhgala</h3>
+        <p>CLASSIC • ROYAL • TIMELESS</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/IMG_20261106_143516_122_2.jpg" alt="Blazer Collection">
+      <div class="card-info">
+        <h3>Luxury Blazers</h3>
+        <p>MODERN • PREMIUM • REFINED</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section class="featured">
+  <div class="featured-content">
+    <div class="tag">THE SIGNATURE EXPERIENCE</div>
+
+    <h2>Made To Measure.<br>Made For You.</h2>
+
+    <p>
+      Your style deserves more than ordinary.
+      Experience custom-fit designs, premium
+      detailing and a look created around you.
+    </p>
+
+    <a href="#contact" class="button">
+      DISCOVER YOUR STYLE
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-box">
+    <div class="section-title">
+      <small>OUR PHILOSOPHY</small>
+      <h2>Beyond Ordinary.</h2>
+    </div>
+
+    <p>
+      At SK TAILOR 07, we believe that great style
+      is personal. From premium Sherwanis to
+      sophisticated Bandhgalas and Blazers,
+      every design is created with attention
+      to detail, fit and individuality.
+
+      <br><br>
+
+      Whether it is your wedding day or a special
+      celebration, make your appearance memorable.
+    </p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="section-title">
+    <small>STYLE IN EVERY FRAME</small>
+    <h2>Our Style Gallery</h2>
+  </div>
+
+  <div class="gallery-grid">
+    <img src="images/IMG_20261106_143516_381_3.jpg" alt="Designer Outfit">
+    <img src="images/IMG_20261106_143516_453_6.jpg" alt="Menswear Style">
+    <img src="images/IMG_20261106_143516_512_8.jpg" alt="Premium Fashion">
+    <img src="images/IMG_20261106_143516_524_9.jpg" alt="Luxury Outfit">
+  </div>
+</section>
+
+<!-- PREMIUM CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-title">
+
+    <small>YOUR STYLE JOURNEY STARTS HERE</small>
+
+    <h2>
+      Make Every Occasion<br>
+      Unforgettable.
+    </h2>
+
+    <p>
+      Connect with SK TAILOR 07 for enquiries
+      and custom designs. Let's create your style.
+    </p>
+
+    <div class="contact-buttons">
+
+      <a class="contact-btn"
+         href="https://www.instagram.com/sktailor07/"
+         target="_blank"
+         rel="noopener noreferrer">
+        <span>◎</span>
+        CONNECT ON INSTAGRAM
+      </a>
+
+      <a class="contact-btn whatsapp"
+         href="https://wa.me/919373480337"
+         target="_blank"
+         rel="noopener noreferrer">
+        <span>↗</span>
+        CHAT ON WHATSAPP
+      </a>
+
+    </div>
+
+    <div class="contact-note">
+      PREMIUM STYLE • PERSONAL FIT • TIMELESS ELEGANCE
+    </div>
+
+  </div>
+</section>
+
+<!-- PREMIUM FOOTER -->
+<footer>
+  <div class="footer-main">
+
+    <div class="footer-brand">
+      SK TAILOR 07
+    </div>
+
+    <div class="footer-tagline">
+      THE ART OF STYLE
+    </div>
+
+    <p class="footer-description">
+      Redefining men's fashion with premium tailoring,
+      timeless designs and a personal touch.
+      Made for moments that matter.
+    </p>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-links">
+
+      <a href="https://www.instagram.com/sktailor07/"
+         target="_blank"
+         rel="noopener noreferrer">
+        ◎ INSTAGRAM
+      </a>
+
+      <a href="https://wa.me/919373480337"
+         target="_blank"
+         rel="noopener noreferrer">
+        ↗ WHATSAPP
+      </a>
+
+      <a href="#home">
+        ↑ BACK TO TOP
+      </a>
+
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      <span>© 2026 SK TAILOR 07. ALL RIGHTS RESERVED.</span>
+      <span>LUXURY MENSWEAR • HYDERABAD</span>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
